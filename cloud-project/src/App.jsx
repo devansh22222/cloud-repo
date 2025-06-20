@@ -33,19 +33,22 @@ export default function App() {
         document.body.style.backgroundSize = "cover";
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundPosition = "center";
-        document.body.style.height = "100vh";
+        document.body.style.height = "125vh";
         document.body.style.margin = 0;
     }, [weatherData]);
 
     const appStyle = {
         textAlign: "center",
-        margin: "50px auto",
+        margin: "0px auto",
         // border: "1px solid black",
         borderRadius: "10px",
         padding: "20px",
         backgroundColor: "rgba(255, 255, 255, 0.8)", // semi-transparent white
         width: "50rem",
-        boxSizing: "border-box"
+        boxSizing: "border-box",
+        
+        
+    
     };
 
     return (

@@ -60,7 +60,7 @@ export default function SearchBox({ updateWeather }) {
 
     const getWeatherFromAWS = async () => {
         try {
-            const res = await fetch("http://localhost:5000/get-sensor-data");
+            const res = await fetch("/api/get-sensor-data");
             const jsonRes = await res.json();
             const sensorData = jsonRes[0]?.payload;
             console.log(sensorData);
@@ -79,7 +79,7 @@ export default function SearchBox({ updateWeather }) {
                 tempMax: sensorData?.temperature || 0,
                 humidity: sensorData?.humidity || 0,
                 weather: "Clear",
-                feelsLike: "", // Sensor may not provide "feels like"
+                feelsLike: sensorData?.feelsLike || 0, // Sensor may not provide "feels like"
                 timestamp: istTime
             };
             setError(false);
@@ -121,19 +121,19 @@ export default function SearchBox({ updateWeather }) {
                 />
                 <br /><br />
 
-                <Button variant="outlined" type="submit" style={{width:"10rem",height:"3.5rem",fontSize:"1.3rem"}}>Search</Button>
-                <br /><br />
+                <Button variant="outlined" type="submit" style={{width:"10rem",height:"2.6rem",fontSize:"0.8rem", fontStyle:"bold"}}>Search</Button>
+                <br />
                 <div style={{margin:"0 auto",display:"flex",justifyContent:"space-between",height:"100px",width:"40rem", alignItems:"center"}}>
-                <Button variant="contained" color="primary" onClick={getLiveWeather} style={{width:"18rem",height:"3.5rem",fontSize:"1rem"}}>
+                <Button variant="contained" color="primary" onClick={getLiveWeather} style={{width:"14rem",height:"2.6rem",fontSize:"0.8rem"}}>
                     Get Live Weather
                 </Button>
-                <br /><br />
-                <Button variant="contained" color="secondary" onClick={getWeatherFromAWS} style={{width:"18rem",height:"3.5rem",fontSize:"1rem"}}>
+                <br />
+                <Button variant="contained" color="secondary" onClick={getWeatherFromAWS} style={{width:"14rem",height:"2.6rem",fontSize:"0.8rem"}}>
                     Get Weather from AWS
                 </Button>
                 </div>
                 <br /><br />
-                {error && <p style={{ color: "red" }}>**No Such Place Exists / Server Error**</p>}
+                {error && <p style={{ color: "red" }}>**No Such Place Exists / IoT device is turned off**</p>}
             </form>
         </div>
     );

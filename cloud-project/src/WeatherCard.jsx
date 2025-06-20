@@ -6,7 +6,7 @@ export default function WeatherCard({ weatherData }) {
     if (!weatherData) return null;
 
     return (
-        <Card style={{ maxWidth: 600, marginTop: 20 , margin:"0 auto", height:"32rem", backgroundColor:"rgba(255, 255, 255, 1)"}}>
+        <Card style={{ maxWidth: 600, marginTop: -60 , margin:"0 auto", height:"28rem", backgroundColor:"rgba(255, 255, 255, 0.5)", boxShadow:"0 0 5px black"}}>
             <CardContent>
                 <Typography variant="h5" component="div" style={{fontSize:"2rem"}}>
                     Weather Information {weatherData.city}
@@ -38,6 +38,7 @@ export default function WeatherCard({ weatherData }) {
                     </Typography>
                    
                 )}
+                <br />
                 
                 <Typography variant="body2" color="text.primary" style={{fontSize:"1.5rem"}}>
                     Weather: {weatherData.weather}

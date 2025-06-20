@@ -1,0 +1,18 @@
+# Ignore node_modules
+node_modules/
+.env
+cloud.pem
+Backend/node_modules/
+cloud-project/node_modules/
+
+# Ignore environment variables
+.env
+Backend/.env
+cloud-project/.env
+
+# Ignore build artifacts
+dist/
+cloud-project/dist/
+.vite/
+
+

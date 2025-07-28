@@ -16,7 +16,7 @@ export default function App() {
 
     const getBackgroundImage = () => {
         if (!weatherData) return defaultImg; // default
-        if (weatherData.humidity > 80) {
+        if (weatherData.humidity > 65) {
             return rainImg;
         } else if (weatherData.temp > 30) {
             return sunImg;

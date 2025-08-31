@@ -7,7 +7,7 @@ export default function SearchBox({ updateWeather }) {
     const [error, setError] = useState(false);
 
     const API_URL = "https://api.openweathermap.org/data/2.5/weather";
-    const API_KEY = "c826466474836dae3269d5e77dc03abe"; // Replace with your real key
+    const API_KEY = "c826466474836dae3269d5e77dc03abe"; 
 
     const getWeatherInfo = async (cityName) => {
         try {
@@ -79,7 +79,7 @@ export default function SearchBox({ updateWeather }) {
                 tempMax: sensorData?.temperature || 0,
                 humidity: sensorData?.humidity || 0,
                 weather: "Clear",
-                feelsLike: sensorData?.feelsLike || 0, // Sensor may not provide "feels like"
+                feelsLike: sensorData?.feelsLike || 0, 
                 timestamp: istTime
             };
             setError(false);

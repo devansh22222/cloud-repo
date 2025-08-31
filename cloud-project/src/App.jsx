@@ -15,7 +15,7 @@ export default function App() {
     };
 
     const getBackgroundImage = () => {
-        if (!weatherData) return defaultImg; // default
+        if (!weatherData) return defaultImg; 
         if (weatherData.humidity > 65) {
             return rainImg;
         } else if (weatherData.temp > 30) {
@@ -27,7 +27,6 @@ export default function App() {
         }
     };
 
-    // 👇 set background on body whenever weatherData changes
     useEffect(() => {
         document.body.style.backgroundImage = `url(${getBackgroundImage()})`;
         document.body.style.backgroundSize = "cover";
@@ -43,7 +42,7 @@ export default function App() {
         // border: "1px solid black",
         borderRadius: "10px",
         padding: "20px",
-        backgroundColor: "rgba(255, 255, 255, 0.8)", // semi-transparent white
+        backgroundColor: "rgba(255, 255, 255, 0.8)", 
         width: "50rem",
         boxSizing: "border-box",
         

@@ -38,13 +38,5 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
 
-const getSensorData = async () => {
-    try {
-        let res = await fetch("http://15.206.194.60:5000/get-sensor-data");
-        let data = await res.json();
-        console.log(data);  
-    } catch (err) {
-        console.error(err);
-    }
-};
+
 
